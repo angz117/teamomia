@@ -29,10 +29,6 @@
         .card:hover {
             transform: scale(1.05);
         }
-        .heart {
-            color: red;
-            font-size: 2rem;
-        }
         button {
             background-color: #ff4d6d;
             color: white;
@@ -53,10 +49,6 @@
     </style>
 </head>
 <body>
-    <audio controls autoplay loop>
-    <source src="Yukun - AQUÍ ESTARÉ.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio.
-</audio>
     
     <div class="container" id="inicio">
         <h1>Presiona aquí 💖😮</h1>
@@ -64,16 +56,18 @@
     </div>
     
     <div class="container hidden" id="propuesta">
-        <h2>Que guapa estas, apreta ahi 👇</h2>
+        <h2>Que guapa estás, apreta ahí 👇</h2>
         <button onclick="mostrarPagina()">Continuar</button>
     </div>
     
     <div class="container hidden" id="contenido">
         <h1>Te amo PochiLimona💖</h1>
-        <button onclick="document.getElementById('musica').play()">Reproducir Música</button>
-        <button onclick="document.getElementById('musica').pause()">Pausar Música</button>
+
+        <!-- Botón para la música -->
+        <p>Te dedico esta música: <a href="TU_LINK_AQUI" target="_blank">Escúchala aquí 🎶</a></p>
+
         <br>
-        <button onclick="showSection('mensaje1')">Lo que eres para mi❤️</button>
+        <button onclick="showSection('mensaje1')">Lo que eres para mí❤️</button>
         <button onclick="showSection('mensaje2')">Lo mucho que te amo😍</button>
         <button onclick="showSection('mensaje3')">Lo mucho que lo siento😭</button>
         
@@ -97,7 +91,6 @@
         function mostrarPagina() {
             document.getElementById('propuesta').classList.add('hidden');
             document.getElementById('contenido').classList.remove('hidden');
-            document.getElementById('musica').play(); // Inicia la música cuando se abre la página principal
         }
         
         function showSection(id) {
@@ -106,12 +99,6 @@
             document.getElementById('mensaje3').classList.add('hidden');
             document.getElementById(id).classList.remove('hidden');
         }
-
-        // Ajustar volumen inicial
-        document.addEventListener("DOMContentLoaded", function () {
-            let musica = document.getElementById('musica');
-            musica.volume = 0.5; // Volumen inicial al 50%
-        });
     </script>
 </body>
 </html>
