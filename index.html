@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mia Pochi💖</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 400px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .heart {
+            color: red;
+            font-size: 2rem;
+        }
+        button {
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #d6336c;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <audio id="musica" loop autoplay>
+        <source src="Yukun - AQUÍ ESTARÉ.mp3" type="audio/mpeg">
+        Tu navegador no soporta el audio.
+    </audio>
+    
+    <div class="container" id="inicio">
+        <h1>Presiona aquí 💖😮</h1>
+        <button onclick="mostrarPropuesta()">Presionar</button>
+    </div>
+    
+    <div class="container hidden" id="propuesta">
+        <h2>Que guapa estas, apreta ahi 👇</h2>
+        <button onclick="mostrarPagina()">Continuar</button>
+    </div>
+    
+    <div class="container hidden" id="contenido">
+        <h1>Te amo PochiLimona💖</h1>
+        <button onclick="document.getElementById('musica').play()">Reproducir Música</button>
+        <button onclick="document.getElementById('musica').pause()">Pausar Música</button>
+        <br>
+        <button onclick="showSection('mensaje1')">Lo que eres para mi❤️</button>
+        <button onclick="showSection('mensaje2')">Lo mucho que te amo😍</button>
+        <button onclick="showSection('mensaje3')">Lo mucho que lo siento😭</button>
+        
+        <div id="mensaje1" class="card hidden">
+            <p>Eres mi universo, cada galaxia, cada estrella, cada planeta, cada trozo de materia en toda la existencia, lo eres todo mi vida, mi tesoro y mi razón de ser. ❤️</p>
+        </div>
+        <div id="mensaje2" class="card hidden">
+            <p>Si pudiera explicar con una palabra lo mucho que te amo creo que sería Forelsket, por siempre sentiré ese sentimiento, jamás se irá, te prometo que si hay otra vida después de esta te buscaré y estaré contigo para ayudarte y apoyarte, no llegaré tarde, estaré ahí para ti siempre. 💕</p>
+        </div>
+        <div id="mensaje3" class="card hidden">
+            <p>A veces soy imprudente, no mido mis palabras y genero discusiones que solo te entristecen y dañan, desde lo más profundo de mi ser estoy arrepentido por cada una de las veces que tu corazón lastimé, espero me perdones por mis estupideces, tú mereces todo lo lindo y si algún día te vas lejos por una oportunidad de conocer y vivir nuevas cosas estaré feliz por ti y por eso quiero darte el mundo entero por si llega ese día, quiero aprovechar el tiempo porque es efímero y no vuelve atrás, acepta mis regalos, mis caricias, mis disculpas, mis te amos, acéptame a mí, quiero hacerte feliz y borrar el enojo de tu corazón. </p>
+        </div>
+    </div>
+    
+    <script>
+        function mostrarPropuesta() {
+            document.getElementById('inicio').classList.add('hidden');
+            document.getElementById('propuesta').classList.remove('hidden');
+        }
+        
+        function mostrarPagina() {
+            document.getElementById('propuesta').classList.add('hidden');
+            document.getElementById('contenido').classList.remove('hidden');
+            document.getElementById('musica').play(); // Inicia la música cuando se abre la página principal
+        }
+        
+        function showSection(id) {
+            document.getElementById('mensaje1').classList.add('hidden');
+            document.getElementById('mensaje2').classList.add('hidden');
+            document.getElementById('mensaje3').classList.add('hidden');
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        // Ajustar volumen inicial
+        document.addEventListener("DOMContentLoaded", function () {
+            let musica = document.getElementById('musica');
+            musica.volume = 0.5; // Volumen inicial al 50%
+        });
+    </script>
+</body>
+</html>
